@@ -1,0 +1,10 @@
+/* Geral */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Lato,system-ui,BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+    background-color: #e8e8e8;
+}
