@@ -1,0 +1,27 @@
+body {
+    background-color: #4169E1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.register_box {
+    height: 500px;
+    width: 500px;
+    background-color: red;
+}
+
+.register_box .container {
+    height: 100%;
+    width: 90%;
+    background-color: white;
+    margin: auto;
+    display: inline-block;
+}
+
+
+
+.register_box .container h1{
+    background-color: blue;
+    align-items: center;
+}

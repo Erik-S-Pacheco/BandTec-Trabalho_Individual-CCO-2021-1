@@ -1,25 +1,31 @@
+::webkit{
+    width: 10px;
+    max-height: 30%;
+    height: 30%;
+}
+
 body {
     background-color: #4169E1;
 }
 
-body .page {
-    width: 100%;
-    max-width: 1120px;
+.page {
+    width: 1120px;
     height: 100vh;
-    margin: auto;
+    display: flex;
+    margin: 0 auto;
 }
 
 .side_bar {
     background-color: #E0E0E0;
     width: 340px;
     height: 100%;
-    float: left;
 }
 
 .side_bar img {
     width: 170px;
     height: 60px;
     margin: 20px 85px 20px 85px;
+    
 }
 
 .list_nav {
@@ -31,6 +37,7 @@ body .page {
 a {
     text-decoration: none;
     color: black;
+    background-color: rgb(150, 83, 94);
   }
 
   .list_nav ul li {
@@ -38,8 +45,36 @@ a {
   }
 
 .content {
-    background-color: #b83434;
     width: 780px;
-    height: 100%;
-    float: right;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.content .search {
+    height: 50px;
+    background-color: cornflowerblue;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.content .page_category {
+    height: 50px;
+    background-color: rgb(237, 109, 100);
+    display: flex;
+    align-items: center;
+}
+
+.post_list{
+    background-color: #b83434;
+    overflow: auto;
+}
+
+.post {
+    width: 700px;
+    /* height: 100px; */
+    margin: auto;
+    background-color: purple;
+    margin: 40px 40px 0px 40px;
 }
