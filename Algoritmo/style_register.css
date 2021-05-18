@@ -1,27 +1,39 @@
-body {
+body .page{
     background-color: #4169E1;
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100vh;
 }
 
 .register_box {
-    height: 500px;
-    width: 500px;
+    position: relative;
+    border: none;
+    text-align: initial;
+    white-space: normal;
+    display: inline-block;
+    vertical-align: middle;
+    min-width: 320px;
+    max-width: 470px;
+    width: 100%;
     background-color: red;
+    padding: 28px 60px;
+    /* margin: 0;  */
 }
 
 .register_box .container {
-    height: 100%;
-    width: 90%;
-    background-color: white;
-    margin: auto;
-    display: inline-block;
+    background-color: #E0E0E0;
 }
 
-
+.logo_div {
+    display: flex;
+    justify-content: center;
+}
+.logo {
+    width: 170px;
+    height: 60px;
+}
 
 .register_box .container h1{
     background-color: blue;
-    align-items: center;
 }
