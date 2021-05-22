@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5e5fa61e13.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/style_general.css">
+    <link rel="stylesheet" href="./css/style_register.css">
+    <title>Register | AniNexus</title>
+</head>
+<body>
+    <div class="page">
+        <div class="register_box">
+            <div class="container">
+                <div class="logo_div">
+                    <img class="logo" src="./img/AniNexus(FundoPNG).png" alt="fundo de anime">
+                </div>
+
+                <div class="login_cadastro">
+                    <div onclick="aparecerLogin()" class="btn_login_cadastro" id="btnLogin">Login</div>
+                    <div onclick="aparecerCadastro()" class="btn_login_cadastro" id="btnCadastro">Cadastro</div>
+                </div>
+
+                <div id="cadastro" style="display: none;">
+                    <h4>Faça aqui seu cadastro!</h4>
+                    <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+                        <label for="">Nome de Usuário</label>
+                        <input type="text" name="nomeCadastro" class="input-padrao" autofocus="autofocus" placeholder="Seu nome de usuário" required minlength="4">
+                        
+                        <label for="">Email</label> 
+                        <input type="text" name="emailCadastro" class="input-padrao" placeholder="Seu email" required minlength="4">
+                        
+                        <label for="">Senha</label> 
+                        <input type="password" name="senhaCadastro" class="input-padrao" placeholder="***************" required minlength="4">
+                        
+                            
+                        <input type="submit" id="btn_entrar" value="Cadastrar" class="btn-blue">
+
+                    </form>
+                    <div id="div_erro" style="display: none;">
+                        Erro no cadastro
+                    </div>
+                </div>
+
+                <div id="login">
+                    <h4>Faça seu login!</h4>
+                    <form id="form_login" method="post" onsubmit="return entrar()">
+                        <label for="">Email</label> 
+                        <input type="text" name="emailLogin" class="input-padrao">
+                        
+                        <label for="">Senha</label> 
+                        <input type="password" name="senhaLogin" class="input-padrao">
+                            
+                        <button id="btn_entrar" class="btn-blue">Entrar</button>
+                    </form>
+                    <div id="div_erro" style="display: none;">
+                        Erro no login
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+
+    function aparecerLogin(){
+        cadastro.style.display = "none";
+        login.style.display = "block";
+        btnLogin.style.borderBottomColor = "#4169E1";
+        btnCadastro.style.borderBottomColor = "#E0E0E0";
+    }
+    function aparecerCadastro(){
+        login.style.display = "none";
+        cadastro.style.display = "block";
+        btnCadastro.style.borderBottomColor = "#4169E1";
+        btnLogin.style.borderBottomColor = "#E0E0E0";
+
+    }
+
+
+
+    function cadastrar() {
+        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+            
+            if (response.ok) {
+
+                window.location.href='login_cadastro.html';
+
+            } else {
+
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    div_erro.innerHTML = resposta;
+                });
+                finalizar_aguardar();
+            }
+        });
+
+        return false;
+    }
+
+    function finalizar_aguardar() {
+        btn_entrar.disabled = false;
+        div_erro.style.display='block';
+    }
+
+
+    function entrar() {
+        var formulario = new URLSearchParams(new FormData(form_login));
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(resposta => {
+
+            if (resposta.ok) {
+
+                resposta.json().then(json => {
+
+                    sessionStorage.login_usuario_meuapp = json.login;
+                    sessionStorage.nome_usuario_meuapp = json.nome;
+
+                    window.location.href = 'index.html';
+                });
+
+            } else {
+
+                console.log('Erro de login!');
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizar_aguardar(texto);
+                });
+            }
+        });
+
+        return false;
+    }
+
+    function finalizar_aguardar(resposta) {
+        btn_entrar.disabled = false;
+        div_erro.style.display='block';
+    }
+
+</script>
