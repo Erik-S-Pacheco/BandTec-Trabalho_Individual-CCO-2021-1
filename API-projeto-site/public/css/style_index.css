@@ -70,30 +70,87 @@ body {
     background-color: white;
 }
 
-.content .search {
-    height: 50px;
-    /* background-color: cornflowerblue; */
+.content .container {
+    height: 60px;
+    width: 100%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    z-index: 4;
+}
+
+.search input, .search button {
+    background: transparent;
+    border: none;
+    outline: 0;
+}
+
+.search {
+    padding-left: 8px;
+    border: 1.7px solid #171717;
+    border-radius: 10px;
+    margin-right: 40px;
+}
+
+.search input {
+    width: 150px;
+}
+
+.search button {
+    padding: 8px;
+    cursor: pointer;
 }
 
 .content .page_category {
     height: 50px;
-    background-color: rgb(237, 109, 100);
+    background-color: #a8a8a8;
     display: flex;
     align-items: center;
+    margin-bottom: 40px
+}
+
+.page_category h1 {
+    font-size: 25px;
+    margin: 0 40px;
 }
 
 .post_list{
     background-color: white;
     overflow: auto;
+    bottom: 0;
+    max-height: 500px;
 }
 
+@media only screen and (min-width: 2560px) {
+    .post_list{
+        background-color: white;
+        overflow: auto;
+        bottom: 0;
+        max-height: 1000px;
+    }
+  }
+
+/* Parte dos post */ 
 .post {
-    width: 700px;
-    /* height: 100px; */
+    /* width: 700px; */
+    width: 90%;
     margin: auto;
     background-color: purple;
-    margin: 40px 40px 0px 40px;
+    margin-bottom: 40px;
+}
+
+.post_flex {
+    display: flex;
+}
+
+.post_thumbnail {
+    width: 345px;
+}
+
+.data, .title, .text, .fonte {
+    margin: 15px;
+}
+
+.post .title {
+    font-size: 22px;
 }

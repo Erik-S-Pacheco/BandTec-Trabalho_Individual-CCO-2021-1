@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="./css/style_general.css">
     <link rel="stylesheet" href="./css/style_index.css">
     <title>AniNexus</title>
+
+    <script type="text/javascript" src="./funcoes.js"></script>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
+    <script src="http://www.chartjs.org/samples/latest/utils.js"></script> -->
 </head>
 <body>
     <div class="page">
@@ -28,13 +34,16 @@
                 
                 <a href="login_cadastro.html">
                     <div><i class="fas fa-sign-in-alt"></i><span>Login</span></div> 
-                </a> 
+                </a>
+                <div id="b_usuario"></div> 
            </div>
         </div>
-        <div class="content">
-            <div class="search">
-                <input type="text" name="search" id="search" placeholder="Pesquisar" required>
-                <button type="submit"><i class="fas fa-search"></i></button>
+        <div class="content"> 
+            <div class="container">
+                <form method="post" class="search">
+                    <input type="text" name="search" id="search" placeholder="Pesquisar" required>
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
             </div>
             <div class="page_category">
                 <h1>
@@ -44,23 +53,156 @@
             </div>
             <div class="post_list">
                 <div class="post">
-                    <div>
-                        <img class="post_thumbnail" src="https://www.intoxianime.com/wp-content/uploads/2019/09/EFj48HSX0AQzI2E-520x245.jpg" alt="">
-                        <p class="data">data <br><span class="title">kimetsu no yaiba</span></p>
+                    <div class="post_flex">
+                        <img class="post_thumbnail" src="https://www.intoxianime.com/wp-content/uploads/2021/05/HorribleSubs-Kaguya-sama-wa-Kokurasetai-S2-03-720p.mkv_snapshot_06.45_2020.04.26_18.44.16-520x245.jpg" alt="">
+                        <div>
+                            <p class="data">MAIO 22, 2021</p>
+                            <p class="title">Kaguya-sama – Mangá terá pausa de 1 
+                                mês para autor preparar novo arco</p>
+                        </div>
                     </div>
                     <div>
-                        <p class="text">gbrfgrgrdgrdgrgrhrhrhrhrh</p>
+                        <p class="text">Um informante confiável confirmou recentemente que o mangá de Kaguya-sama 
+                            irá ter uma pausa de 1 mês após o seu próximo capítulo, que deve ser lançado no dia 27 de maio. 
+                            <br>
+                            De acordo com o informante, o motivo dessa pausa é para o autor se preparar para o 
+                            novo arco que será mais elaborada e argumentativo.
+                            <br>
+                            Na história a vice-presidente, e o presidente estudantil, ambos considerados os maiores gênios da escola, gostam muito um do outro,
+                            mas por orgulho, e suas personalidades bizarras, querem fazer o outro se apaixonar completamente e se declarar. 
+                            A história acompanha o dia a dia deles, enquanto ficam em uma guerra fria tentando que o outro se declarar.
+                        </p>
+                        <p class="fonte">Fonte: <a href="https://www.intoxianime.com/2021/05/kaguya-sama-manga-tera-pausa-de-1-mes-para-autor-preparar-novo-arco/">Marcelo Almeida</a></p>
                     </div>
                 </div>
+
                 <div class="post">
-                    <div>
-                        <img class="post_thumbnail" src="https://www.intoxianime.com/wp-content/uploads/2019/09/EFj48HSX0AQzI2E-520x245.jpg" alt="">
-                        <p class="data">data <br><span class="title">kimetsu no yaiba</span></p>
+                    <div class="post_flex">
+                        <img class="post_thumbnail" src="https://www.intoxianime.com/wp-content/uploads/2021/05/HorribleSubs-Kaguya-sama-wa-Kokurasetai-S2-03-720p.mkv_snapshot_06.45_2020.04.26_18.44.16-520x245.jpg" alt="">
+                        <div>
+                            <p class="data">MAIO 22, 2021</p>
+                            <p class="title">Kaguya-sama – Mangá terá pausa de 1 
+                                mês para autor preparar novo arco</p>
+                        </div>
                     </div>
                     <div>
-                        <p class="text">gbrfgrgrdgrdgrgrhrhrhrhrh</p>
+                        <p class="text">Lorem ipsum dolor sit amet consectetur, 
+                            adipisicing elit. Esse beatae quas pariatur impedit 
+                            asperiores! Itaque doloribus autem voluptates quidem 
+                            hic expedita aliquam doloremque temporibus sequi 
+                            repudiandae, est ex architecto accusantium!</p>
                     </div>
                 </div>
+
+                <div class="post">
+                    <div class="post_flex">
+                        <img class="post_thumbnail" src="https://www.intoxianime.com/wp-content/uploads/2021/05/HorribleSubs-Kaguya-sama-wa-Kokurasetai-S2-03-720p.mkv_snapshot_06.45_2020.04.26_18.44.16-520x245.jpg" alt="">
+                        <div>
+                            <p class="data">MAIO 22, 2021</p>
+                            <p class="title">Kaguya-sama – Mangá terá pausa de 1 
+                                mês para autor preparar novo arco</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text">Lorem ipsum dolor sit amet consectetur, 
+                            adipisicing elit. Esse beatae quas pariatur impedit 
+                            asperiores! Itaque doloribus autem voluptates quidem 
+                            hic expedita aliquam doloremque temporibus sequi 
+                            repudiandae, est ex architecto accusantium!</p>
+                    </div>
+                </div>
+
+                <div class="post">
+                    <div class="post_flex">
+                        <img class="post_thumbnail" src="https://www.intoxianime.com/wp-content/uploads/2021/05/HorribleSubs-Kaguya-sama-wa-Kokurasetai-S2-03-720p.mkv_snapshot_06.45_2020.04.26_18.44.16-520x245.jpg" alt="">
+                        <div>
+                            <p class="data">MAIO 22, 2021</p>
+                            <p class="title">Kaguya-sama – Mangá terá pausa de 1 
+                                mês para autor preparar novo arco</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text">Lorem ipsum dolor sit amet consectetur, 
+                            adipisicing elit. Esse beatae quas pariatur impedit 
+                            asperiores! Itaque doloribus autem voluptates quidem 
+                            hic expedita aliquam doloremque temporibus sequi 
+                            repudiandae, est ex architecto accusantium!</p>
+                    </div>
+                </div>
+
+                <div class="post">
+                    <div class="post_flex">
+                        <img class="post_thumbnail" src="https://www.intoxianime.com/wp-content/uploads/2021/05/HorribleSubs-Kaguya-sama-wa-Kokurasetai-S2-03-720p.mkv_snapshot_06.45_2020.04.26_18.44.16-520x245.jpg" alt="">
+                        <div>
+                            <p class="data">MAIO 22, 2021</p>
+                            <p class="title">Kaguya-sama – Mangá terá pausa de 1 
+                                mês para autor preparar novo arco</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text">Lorem ipsum dolor sit amet consectetur, 
+                            adipisicing elit. Esse beatae quas pariatur impedit 
+                            asperiores! Itaque doloribus autem voluptates quidem 
+                            hic expedita aliquam doloremque temporibus sequi 
+                            repudiandae, est ex architecto accusantium!</p>
+                    </div>
+                </div>
+
+                <div class="post">
+                    <div class="post_flex">
+                        <img class="post_thumbnail" src="https://www.intoxianime.com/wp-content/uploads/2021/05/HorribleSubs-Kaguya-sama-wa-Kokurasetai-S2-03-720p.mkv_snapshot_06.45_2020.04.26_18.44.16-520x245.jpg" alt="">
+                        <div>
+                            <p class="data">MAIO 22, 2021</p>
+                            <p class="title">Kaguya-sama – Mangá terá pausa de 1 
+                                mês para autor preparar novo arco</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text">Lorem ipsum dolor sit amet consectetur, 
+                            adipisicing elit. Esse beatae quas pariatur impedit 
+                            asperiores! Itaque doloribus autem voluptates quidem 
+                            hic expedita aliquam doloremque temporibus sequi 
+                            repudiandae, est ex architecto accusantium!</p>
+                    </div>
+                </div>
+
+                <div class="post">
+                    <div class="post_flex">
+                        <img class="post_thumbnail" src="https://www.intoxianime.com/wp-content/uploads/2021/05/HorribleSubs-Kaguya-sama-wa-Kokurasetai-S2-03-720p.mkv_snapshot_06.45_2020.04.26_18.44.16-520x245.jpg" alt="">
+                        <div>
+                            <p class="data">MAIO 22, 2021</p>
+                            <p class="title">Kaguya-sama – Mangá terá pausa de 1 
+                                mês para autor preparar novo arco</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text">Lorem ipsum dolor sit amet consectetur, 
+                            adipisicing elit. Esse beatae quas pariatur impedit 
+                            asperiores! Itaque doloribus autem voluptates quidem 
+                            hic expedita aliquam doloremque temporibus sequi 
+                            repudiandae, est ex architecto accusantium!</p>
+                    </div>
+                </div>
+
+                <div class="post">
+                    <div class="post_flex">
+                        <img class="post_thumbnail" src="https://www.intoxianime.com/wp-content/uploads/2021/05/HorribleSubs-Kaguya-sama-wa-Kokurasetai-S2-03-720p.mkv_snapshot_06.45_2020.04.26_18.44.16-520x245.jpg" alt="">
+                        <div>
+                            <p class="data">MAIO 22, 2021</p>
+                            <p class="title">Kaguya-sama – Mangá terá pausa de 1 
+                                mês para autor preparar novo arco</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text">Lorem ipsum dolor sit amet consectetur, 
+                            adipisicing elit. Esse beatae quas pariatur impedit 
+                            asperiores! Itaque doloribus autem voluptates quidem 
+                            hic expedita aliquam doloremque temporibus sequi 
+                            repudiandae, est ex architecto accusantium!</p>
+                    </div>
+                </div>
+
+                
                 
             </div>
         </div>
