@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5e5fa61e13.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/style_general.css">
+    <link rel="stylesheet" href="./css/style_profile.css">
+    <title>Perfil | AniNexus</title>
+    <script type="text/javascript" src="./funcoes.js"></script>
+
+</head>
+<body>
+    <div class="page">
+        <div class="profile_box">
+            <div class="container">
+                <div class="header_profile">
+                    <i onclick="logoff()" class="fas fa-arrow-left"></i><span>Perfil</span>
+                </div>
+                <div class="flex">
+                    <img class="perfil_photo" src="./img/profile.png" alt="fundo de anime">
+                </div>
+
+
+                <div class="flex name_div">
+                    <span id="b_usuario">Portgas D. Ace</span><i class="fas fa-pen-square"></i>
+                </div>
+
+                <div class="flex email_div">
+                    <span>josue_ft@gmail.com</span>
+                </div>
+
+                
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+
+    function aparecerLogin(){
+        cadastro.style.display = "none";
+        login.style.display = "block";
+        btnLogin.style.borderBottomColor = "#4169E1";
+        btnCadastro.style.borderBottomColor = "#E0E0E0";
+    }
+    function aparecerCadastro(){
+        login.style.display = "none";
+        cadastro.style.display = "block";
+        btnCadastro.style.borderBottomColor = "#4169E1";
+        btnLogin.style.borderBottomColor = "#E0E0E0";
+    }
+
+
+
+    function cadastrar() {
+        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+            
+            if (response.ok) {
+
+                window.location.href='login_cadastro.html';
+
+            } else {
+
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    div_erro.innerHTML = resposta;
+                });
+                finalizar_aguardar();
+            }
+        });
+
+        return false;
+    }
+
+    function finalizar_aguardar() {
+        btn_entrar.disabled = false;
+        div_erro.style.display='block';
+    }
+
+
+    function entrar() {
+        var formulario = new URLSearchParams(new FormData(form_login));
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(resposta => {
+
+            if (resposta.ok) {
+
+                resposta.json().then(json => {
+
+                    sessionStorage.login_usuario_meuapp = json.login;
+                    sessionStorage.nome_usuario_meuapp = json.nome;
+
+                    window.location.href = 'index.html';
+                });
+
+            } else {
+
+                console.log('Erro de login!');
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizar_aguardar(texto);
+                });
+            }
+        });
+
+        return false;
+    }
+
+    function finalizar_aguardar(resposta) {
+        btn_entrar.disabled = false;
+        div_erro.style.display='block';
+    }
+
+</script>
