@@ -1,9 +1,12 @@
+.post_list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* Parte dos post */ 
 .post {
-    /* width: 700px; */
     width: 90%;
-    margin: auto;
-    background-color: purple;
     margin-bottom: 40px;
 }
 
