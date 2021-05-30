@@ -1,0 +1,24 @@
+/* Parte dos post */ 
+.post {
+    /* width: 700px; */
+    width: 90%;
+    margin: auto;
+    background-color: purple;
+    margin-bottom: 40px;
+}
+
+.post_flex {
+    display: flex;
+}
+
+.post_thumbnail {
+    width: 345px;
+}
+
+.data, .title, .text, .fonte {
+    margin: 15px;
+}
+
+.post .title {
+    font-size: 22px;
+}

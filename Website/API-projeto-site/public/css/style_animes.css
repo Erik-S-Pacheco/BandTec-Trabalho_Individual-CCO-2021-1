@@ -1,24 +1,39 @@
 /* Parte dos post */ 
 .post {
-    /* width: 700px; */
     width: 90%;
     margin: auto;
-    background-color: purple;
-    margin-bottom: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-top: 1px solid #cccccc;
 }
 
 .post_flex {
     display: flex;
 }
 
-.post_thumbnail {
-    width: 345px;
+#cover_container {
+    width: 220px;
+    height: 335px;
+    border: 2px solid #4169e1;
+    margin: 0 10px 10px 0;
+    cursor: pointer;
 }
 
-.data, .title{
-    margin: 15px;
+#cover_container img{
+    width: 100%;
+    height: 100%;
 }
 
-.post .title {
-    font-size: 22px;
+.about_container {
+    width: calc(100% - 224px);
+}
+
+.text_about {
+    padding: 5px 0;
+    font-size: 18px;
+}
+
+.sinopse_container .sinopse {
+    text-align: justify;
+    font-size: 18px;
 }

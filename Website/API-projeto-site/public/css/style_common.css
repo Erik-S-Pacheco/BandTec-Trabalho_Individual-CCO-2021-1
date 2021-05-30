@@ -68,7 +68,7 @@ body {
   width: 780px;
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: #f8f4f2;
 }
 
 .content .container {
@@ -104,10 +104,10 @@ body {
 
 .content .page_category {
   height: 50px;
-  background-color: #a8a8a8;
+  /* background-color: #a8a8a8; */
   display: flex;
   align-items: center;
-  margin-bottom: 40px
+  /* margin-bottom: 40px */
 }
 
 .page_category h1 {
@@ -116,9 +116,7 @@ body {
 }
 
 .post_list{
-  background-color: white;
-  overflow: auto;
-  bottom: 0;
+    overflow: auto;
   height: calc( 100% - 110px );
 }
 
