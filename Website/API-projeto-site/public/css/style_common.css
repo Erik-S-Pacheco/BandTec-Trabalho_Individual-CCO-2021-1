@@ -99,6 +99,11 @@ body {
   color: #a8a8a8;
 }
 
+.search input {
+  height: 45px;
+  width: 200px;
+}
+
 .search button {
   cursor: pointer;
 }

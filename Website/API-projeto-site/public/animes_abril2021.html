@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./css/style_general.css">
     <link rel="stylesheet" href="./css/style_common.css">
     <link rel="stylesheet" href="./css/style_animes.css">
-    <title>AniNexus / Animes</title>
+    <title>AniNexus / Animes de Abril 2021</title>
 
 </head>
 <body>
@@ -41,6 +41,10 @@
                     <div class="item_nav"><i class="far fa-chart-bar"></i><span>Rank</span></div>
                 </a>
 
+                <a href="random_anime.html">
+                    <div class="item_nav"><i class="fas fa-random"></i><span>Random Anime</span></div>
+                </a>
+
                 <a href="login_cadastro.html">
                     <div class="item_nav"><i class="far fa-user-circle"></i><span>Login</span></div> 
                 </a>
@@ -66,6 +70,12 @@
                             <div class="text_about"><b>Fonte:</b> Mangá</div>
                             <div class="text_about"><b>Gênero:</b> Ação, Superpoderes</div>
                             <div class="text_about"><b>Diretor:</b> Masahiro Mukai</div>
+
+                            <form id="form_avaliacao" method="post" onsubmit="return avaliar()">
+                                <b>Nota (0 a 10):</b> 
+                                <input type="text" name="valorNota" autofocus="autofocus" placeholder="Digite aqui a nota" required minlength="4">
+                                <button id="btn_entrar">Enviar</button>
+                            </form>
                         </div>
                     </div>
                     <div class="sinopse_container">
@@ -88,6 +98,11 @@
                             <div class="text_about"><b>Fonte:</b> Mangá</div>
                             <div class="text_about"><b>Gênero:</b> Ação, Superpoderes</div>
                             <div class="text_about"><b>Diretor:</b> Masahiro Mukai</div>
+
+                            <form id="form_avaliacao" method="post" onsubmit="return avaliar()">
+                                <b>Nota (0 a 10):</b> 
+                                <input type="text" name="valorNota" autofocus="autofocus" placeholder="Digite aqui a nota" required minlength="4">
+                            </form>
                         </div>
                     </div>
                     <div class="sinopse_container">

@@ -8,43 +8,27 @@
 
 
 /* Parte dos post */ 
-.post {
+.container_chart {
     width: 90%;
+    height: 300px;
     padding-top: 40px;
     padding-bottom: 40px;
     border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
 }
 
 .post_flex {
     display: flex;
 }
 
-#thumbnail_container {
-    width: 345px;
-    height: 162px;
-    margin: 0 10px 10px 0;
-}
-
-#thumbnail_container img {
-    width: 100%;
+.choose_chart {
+    width: 20%;
     height: 100%;
+    text-align: center;
 }
 
-.about_container {
-    width: calc(100% - 345px);
-}
-
-.about_container div {
-
-}
-
-.text_about {
-    padding: 5px 0;
-    font-size: 18px;
-}
-
-.news_container .news{
-    text-align: justify;
-    font-size: 18px;
+#chart {
+    width: 80%;
+    height: 100%;
 }
 

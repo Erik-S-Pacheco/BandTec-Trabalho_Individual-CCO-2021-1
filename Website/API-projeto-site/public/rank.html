@@ -10,6 +10,17 @@
     <link rel="stylesheet" href="./css/style_rank.css">
     <title>AniNexus / Rank</title>
 
+    <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <style>
+		canvas {
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			-ms-user-select: none;
+		}
+	</style>
+
 </head>
 <body>
     <div class="page">
@@ -41,6 +52,10 @@
                     <div class="item_nav"><i class="far fa-chart-bar"></i><span>Rank</span></div>
                 </a>
 
+                <a href="random_anime.html">
+                    <div class="item_nav"><i class="fas fa-random"></i><span>Random Anime</span></div>
+                </a>
+
                 <a href="login_cadastro.html">
                     <div class="item_nav"><i class="far fa-user-circle"></i><span>Login</span></div> 
                 </a>
@@ -54,17 +69,101 @@
                 </h1>
             </div>
             <div class="content_container">
-                <div class="container_chart">
-                    <div class="choose_chart"></div>
-                    <div id="chart">
+
+                <div><h2>Veja o top 5 dos animes de cada ano</h2></div>
+                <div class="container_chart post_flex">
+                    <div class="choose_chart">
+                        <select id="list_ranking_Anime_year" onchange="rank()">
+                            <option value="0">Nenhuma</option>
+                            <option value="2020">2020</option>
+                            <option value="2019">2019</option>
+                        </select>
+                        <!-- <button onclick="rank()">Teste</button> -->
 
                     </div>
-                </div>
-                <div class="container_suprise">
-                    
+                    <div id="chart">
+                        <canvas id="myChartBar"></canvas>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </body>
 </html>
+
+<script>
+   
+   var labelsBar = [];
+
+   var dataBar = 0;
+function rank() {
+    
+    var animeAno = list_ranking_Anime_year.value; 
+
+
+    // Gráfico de Barras - Top 5 animes
+    // Dados do Gráfico
+
+    if(animeAno == 2019){
+        labelsBar = ["Dragon Ball","Kimetsu","Jujutsu","Hunter x Hunter","Naruto",];
+        
+        dataBar = {
+        labels: labelsBar,
+        datasets: [
+            {
+                label: 'Top 5 animes de 2019',
+                backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(255, 205, 86, 0.2)', 'rgba(75, 192, 192, 0.2)',
+                'rgba(54, 162, 235, 0.2)'],
+                borderColor: ['rgb(255, 99, 132)', 'rgb(255, 159, 64)', 'rgb(255, 205, 86)', 'rgb(75, 192, 192)', 'rgb(54, 162, 235)'],
+                borderWidth: 1,
+                data: [10, 9.5, 9.0, 8, 7, 10, 0],
+                },
+            ],
+        };
+
+    } else if (animeAno == 2020) {
+        labelsBar = ["Naruto","Kimetsu","Jujutsu","Hunter x Hunter","Dragon Ball",];
+
+        dataBar = {
+        labels: labelsBar,
+        datasets: [
+            {
+                label: 'Top 5 animes de 2020',
+                backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(255, 205, 86, 0.2)', 'rgba(75, 192, 192, 0.2)',
+                'rgba(54, 162, 235, 0.2)'],
+                borderColor: ['rgb(255, 99, 132)', 'rgb(255, 159, 64)', 'rgb(255, 205, 86)', 'rgb(75, 192, 192)', 'rgb(54, 162, 235)'],
+                borderWidth: 1,
+                data: [7, 9.5, 9.0, 8, 7, 10, 0],
+                },
+            ],
+        };
+    } else {
+        labelsBar = [];
+
+        dataBar = {
+        labels: labelsBar,
+        datasets: [
+            {
+                label: '',
+                backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(255, 205, 86, 0.2)', 'rgba(75, 192, 192, 0.2)',
+                'rgba(54, 162, 235, 0.2)'],
+                borderColor: ['rgb(255, 99, 132)', 'rgb(255, 159, 64)', 'rgb(255, 205, 86)', 'rgb(75, 192, 192)', 'rgb(54, 162, 235)'],
+                borderWidth: 1,
+                data: [0, 0, 0, 0, 0, 0, 0, 10],
+                },
+            ],
+        };
+    }
+
+    // configurações do grafico estatico
+    const configBar = {
+      type: "bar",
+      data: dataBar,
+      options: { maintainAspectRatio: false, },
+    }
+
+    var myChartBar = new Chart(document.getElementById('myChartBar'), configBar);
+
+  }
+
+</script>

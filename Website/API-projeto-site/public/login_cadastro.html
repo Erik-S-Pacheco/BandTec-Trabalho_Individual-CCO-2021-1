@@ -29,7 +29,7 @@
                         <input type="text" name="nomeCadastro" class="input-padrao" autofocus="autofocus" placeholder="Seu nome de usuário" required minlength="4">
                         
                         <label for="">Email</label> 
-                        <input type="text" name="emailCadastro" class="input-padrao" placeholder="Seu email" required minlength="4">
+                        <input type="text" id="email" name="emailCadastro" class="input-padrao" placeholder="Seu email" required minlength="4">
                         
                         <label for="">Senha</label> 
                         <input type="password" name="senhaCadastro" class="input-padrao" placeholder="***************" required minlength="4">
@@ -81,27 +81,38 @@
 
 
     function cadastrar() {
-        var formulario = new URLSearchParams(new FormData(form_cadastro));
-        fetch("/usuarios/cadastrar", {
+        var emailValidacao = email.value;
+        
+
+        // if(emailValidacao.indexOf("@") > -1 && frase.indexOf(".") > -1) {
+            var formulario = new URLSearchParams(new FormData(form_cadastro));
+            fetch("/usuarios/cadastrar", {
             method: "POST",
             body: formulario
-        }).then(function (response) {
+            }).then(function (response) {
             
-            if (response.ok) {
+                if (response.ok) {
 
-                window.location.href='login_cadastro.html';
+                    window.location.href='login_cadastro.html';
 
-            } else {
+                } else {
 
-                console.log('Erro de cadastro!');
-                response.text().then(function (resposta) {
-                    div_erro.innerHTML = resposta;
-                });
-                finalizar_aguardar();
-            }
-        });
+                    console.log('Erro de cadastro!');
+                    response.text().then(function (resposta) {
+                        div_erro.innerHTML = resposta;
+                    });
+                    finalizar_aguardar();
+                }
+            });
 
-        return false;
+            return false;
+        
+        // } else {
+        //     return false;
+        //     window.location.href='login_cadastro.html';
+        //     aparecerCadastro();
+        // }
+  
     }
 
     function finalizar_aguardar() {
@@ -120,10 +131,10 @@
             if (resposta.ok) {
 
                 resposta.json().then(json => {
-
-                    sessionStorage.login_usuario_meuapp = json.login;
-                    sessionStorage.nome_usuario_meuapp = json.nome;
-
+                    console.log("resposta",json);
+                    sessionStorage.login_usuario_meuapp = json.email;
+                    sessionStorage.nome_usuario_meuapp = json.nomeUsuario;
+                    
                     window.location.href = 'profile.html';
                 });
 

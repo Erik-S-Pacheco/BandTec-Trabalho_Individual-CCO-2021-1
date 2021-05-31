@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5e5fa61e13.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/style_general.css">
+    <link rel="stylesheet" href="./css/style_common.css">
+    <link rel="stylesheet" href="./css/style_animes.css">
+    <title>AniNexus / Animes de Julho 2021</title>
+
+</head>
+<body>
+    <div class="page">
+        <div class="side_bar">
+           <img src="./img/AniNexus(FundoPNG).png" alt="">
+           <div class="list_nav">
+                <form method="post" class="search">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                    <input type="text" name="search" id="search" placeholder="Pesquisar" required>
+                </form>
+
+                <div class="word_navegation">
+                    <span>Navegação</span>
+                </div>
+
+                <a href="index.html">
+                    <div  class="item_nav"><i class="fas fa-home"></i><span>Home</span></div>
+                </a> 
+                
+                <a href="guia_temporada.html">
+                    <div class="item_nav"><i class="fas fa-map-marked-alt"></i><span>Guia de Temporadas</span></div>
+                </a>
+                
+                <a href="">
+                    <div class="item_nav"><i class="fas fa-phone-alt"></i><span>Contato</span></div>
+                </a>
+                
+                <a href="rank.html">
+                    <div class="item_nav"><i class="far fa-chart-bar"></i><span>Rank</span></div>
+                </a>
+
+                <a href="random_anime.html">
+                    <div class="item_nav"><i class="fas fa-random"></i><span>Random Anime</span></div>
+                </a>
+
+                <a href="login_cadastro.html">
+                    <div class="item_nav"><i class="far fa-user-circle"></i><span>Login</span></div> 
+                </a>
+           </div>
+        </div>
+        <div class="content"> 
+            <div class="page_category">
+                <h1>
+                    Categoria: 
+                    <span>Animes</span>
+                </h1>
+            </div>
+            <div class="post_list">
+                <div class="post">
+                    <div class="post_flex">
+                        <div id="cover_container">
+                            <a href="https://www.anitube.site/901511/">
+                                <img src="https://www.anitube.site/wp-content/uploads/Boku-no-Hero-Academia-5-Todos-os-Epis%C3%B3dios-AniTube.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="about_container">
+                            <div class="text_about"><b>Boku no Hero Academia 5</b></div>
+                            <div class="text_about"><b>Fonte:</b> Mangá</div>
+                            <div class="text_about"><b>Gênero:</b> Ação, Superpoderes</div>
+                            <div class="text_about"><b>Diretor:</b> Masahiro Mukai</div>
+
+                            <form id="form_avaliacao" method="post" onsubmit="return avaliar()">
+                                <b>Nota (0 a 10):</b> 
+                                <input type="text" name="valorNota" autofocus="autofocus" placeholder="Digite aqui a nota" required minlength="4">
+                                <button id="btn_entrar">Enviar</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="sinopse_container">
+                        <p class="sinopse">A história se passa em um mundo onde quase toda a população desenvolveu alguma habilidade especial, e “herói” foi reconhecido como uma profissão oficial. 
+                        <br>
+                        Midoriya Izuko, sonha em ser um herói, mas é um dos raros casos de humanos normais. Em um certo dia ele acaba por encontra o herói que o inspirou a seguir a profissão, que acaba por oferecer uma oportunidade de conseguir poderes, assim mudando sua vida completamente.   
+                        </p>                                    
+                    </div>        
+                </div>
+
+                <div class="post">
+                    <div class="post_flex">
+                        <div id="cover_container">
+                            <a href="https://www.anitube.site/901511/">
+                                <img src="https://www.anitube.site/wp-content/uploads/Boku-no-Hero-Academia-5-Todos-os-Epis%C3%B3dios-AniTube.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="about_container">
+                            <div class="text_about"><b>Boku no Hero Academia 5</b></div>
+                            <div class="text_about"><b>Fonte:</b> Mangá</div>
+                            <div class="text_about"><b>Gênero:</b> Ação, Superpoderes</div>
+                            <div class="text_about"><b>Diretor:</b> Masahiro Mukai</div>
+
+                            <form id="form_avaliacao" method="post" onsubmit="return avaliar()">
+                                <b>Nota (0 a 10):</b> 
+                                <input type="text" name="valorNota" autofocus="autofocus" placeholder="Digite aqui a nota" required minlength="4">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="sinopse_container">
+                        <p class="sinopse">A história se passa em um mundo onde quase toda a população desenvolveu alguma habilidade especial, e “herói” foi reconhecido como uma profissão oficial. 
+                        <br>
+                        Midoriya Izuko, sonha em ser um herói, mas é um dos raros casos de humanos normais. Em um certo dia ele acaba por encontra o herói que o inspirou a seguir a profissão, que acaba por oferecer uma oportunidade de conseguir poderes, assim mudando sua vida completamente.   
+                        </p>                                    
+                    </div>        
+                </div>
+ 
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -12,7 +12,7 @@ router.post('/autenticar', function(req, res, next) {
 	var login = req.body.emailLogin; // depois de .body, use o nome (name) do campo em seu formulário de login
 	var senha = req.body.senhaLogin; // depois de .body, use o nome (name) do campo em seu formulário de login	
 	
-	let instrucaoSql = `select * from usuario where email='${login}' and senha='${senha}'`;
+	let instrucaoSql = `select * from Usuario where email='${login}' and senha='${senha}'`;
 	// let nome_Use = `select nomeUsuario from usuario where email='${login}' and senha='${senha}'`;
 	console.log(instrucaoSql);
 
@@ -81,7 +81,7 @@ router.get('/sessao/:login', function(req, res, next) {
 
 /* Logoff de usuário */
 router.get('/sair/:login', function(req, res, next) {
-	let login = req.params.login;
+	let login = req.params.emailLogin;
 	console.log(`Finalizando a sessão do usuário ${login}`);
 	let nova_sessoes = []
 	for (let u=0; u<sessoes.length; u++) {
