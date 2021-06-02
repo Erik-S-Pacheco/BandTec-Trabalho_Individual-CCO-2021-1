@@ -14,7 +14,9 @@
         <div class="register_box">
             <div class="container">
                 <div class="logo_div">
-                    <img class="logo" src="./img/AniNexus(FundoPNG).png" alt="fundo de anime">
+                    <a href="index.html">
+                        <img class="logo" src="./img/AniNexus(FundoPNG).png" alt="fundo de anime">
+                    </a>
                 </div>
 
                 <div class="login_cadastro">
@@ -29,7 +31,7 @@
                         <input type="text" name="nomeCadastro" class="input-padrao" autofocus="autofocus" placeholder="Seu nome de usuário" required minlength="4">
                         
                         <label for="">Email</label> 
-                        <input type="text" id="email" name="emailCadastro" class="input-padrao" placeholder="Seu email" required minlength="4">
+                        <input type="email" id="email" name="emailCadastro" class="input-padrao" placeholder="Seu email" required minlength="4">
                         
                         <label for="">Senha</label> 
                         <input type="password" name="senhaCadastro" class="input-padrao" placeholder="***************" required minlength="4">
@@ -51,9 +53,10 @@
                         
                         <label for="">Senha</label> 
                         <input type="password" name="senhaLogin" class="input-padrao">
-                            
+                        <div><a href="">Esqueceu a senha?</a></div>
                         <button id="btn_entrar" class="btn-blue">Entrar</button>
                     </form>
+                    
                     <div id="div_erro" style="display: none;">
                         Erro no login
                     </div>
@@ -71,13 +74,26 @@
         login.style.display = "block";
         btnLogin.style.borderBottomColor = "#4169E1";
         btnCadastro.style.borderBottomColor = "#E0E0E0";
+       
     }
+
+    // function apagarCampoCadastro(){
+    //     with (document) {
+    //     getElementById("nomeCadastro").value = "";
+    //     getElementById("email").value = "";
+    //     getElementById("senhaCadastro").value = "";
+    // }
+    // }
+
     function aparecerCadastro(){
         login.style.display = "none";
         cadastro.style.display = "block";
         btnCadastro.style.borderBottomColor = "#4169E1";
         btnLogin.style.borderBottomColor = "#E0E0E0";
     }
+
+
+
 
 
     function cadastrar() {

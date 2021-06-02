@@ -16,9 +16,19 @@ create table Usuario (
     senha varchar(50)
 );
 
-create table tbComentario (
+select * from Usuario;
 
+create table tbComentario (
+ fkNoticiaComentario int,
+ foreign key (fkNoticiaComentario) references tbNoticia(idNoticia),
+ fkUsuarioComentario int,
+ foreign key (fkUsuarioComentario) references Usuario(idUsuario),
+ dataComentario date,
+ primary key (fkNoticiaComentario, fkUsuarioComentario, dataComentario),
+ textoComentario varchar(255)
 );
 
-select * from Usuario;
+
+ 
+
 

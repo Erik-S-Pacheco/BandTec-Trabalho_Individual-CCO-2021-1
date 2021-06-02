@@ -43,17 +43,50 @@ body .page{
     width: 120px;
     height: 120px;
     border-radius: 50%;
+    margin-bottom: 15px;
 }
 
-.name_div, .email_div{
-    margin-top: 15px;
+.name_div {
+    margin-bottom: 15px;
+}
+.name_div span {
+    font-size: 20px;
 }
 
-.name_div span{
-    margin-right: 10px;
+.name_div i{
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 18px;
 }
 
 .name_div i:hover{
     color: #4169e1;
+}
+
+.option_profile {
+    flex-wrap: wrap;
+}
+
+.box_option {
+    background-color: royalblue;
+    margin: 10px 10px;
+    width: 168px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.box_option i {
+    font-size: 40px;
+    padding: 10px 0;
+}
+
+.box_option p {
+    padding-bottom: 10px;
+    font-size: 20px;
 }
 
