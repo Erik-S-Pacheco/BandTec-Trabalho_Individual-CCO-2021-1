@@ -27,6 +27,14 @@ body .page{
     width: 80%;
 }
 
+.header_profile {
+    color: #524E50;
+}
+
+.header_profile span{
+    font-size: 20px;
+}
+
 .header_profile i {
     margin-right: 10px;
     cursor: pointer;

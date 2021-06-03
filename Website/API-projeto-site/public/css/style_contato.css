@@ -31,9 +31,9 @@
     width: calc(100% - 345px);
 }
 
-/* .about_container div {
+.about_container div {
 
-} */
+}
 
 .text_about {
     padding: 5px 0;
