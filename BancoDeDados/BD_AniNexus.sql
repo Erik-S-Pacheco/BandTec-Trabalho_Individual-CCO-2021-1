@@ -41,10 +41,30 @@ select * from Usuario;
 
 create table tbChat (
 	idDescricao int primary key auto_increment,
-    descriacao varchar(150),
+    descricao varchar(150),
     fkUsuarioDescricao int,
     foreign key (fkUsuarioDescricao) references Usuario (idUsuario)
 );
+
+insert into tbChat (descricao, fkUsuarioDescricao) values
+('Sejam bem vindos ao chat do AniNexus :)', 1);
+
+SELECT 
+    usuario.nomeUsuario,
+    descricao
+    FROM tbChat
+    INNER JOIN Usuario
+    ON tbChat.fkUsuarioDescricao = Usuario.idUsuario
+    WHERE fkUsuarioDescricao = idUsuario
+    ORDER BY tbChat.idDescricao DESC;
+
+SELECT 
+    Usuario.nomeUsuario,
+    descricao
+    FROM tbChat
+    INNER JOIN Usuario
+    ON tbChat.fkUsuarioDescricao = Usuario.idUsuario
+    ORDER BY tbChat.idUsuario DESC;
 
 
 create table tbAvaliacaoAnime (

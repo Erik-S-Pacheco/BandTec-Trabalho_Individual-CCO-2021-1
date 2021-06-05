@@ -75,6 +75,10 @@ body .page{
     flex-wrap: wrap;
 }
 
+.option_profile a {
+    text-decoration: none;
+}
+
 .box_option {
     background-color: royalblue;
     margin: 10px 10px;

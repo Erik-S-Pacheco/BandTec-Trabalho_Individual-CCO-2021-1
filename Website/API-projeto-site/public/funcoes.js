@@ -8,14 +8,15 @@ function redirecionar_login() {
 function verificar_autenticacao() {
     login_usuario = sessionStorage.login_usuario_meuapp;
     nome_usuario = sessionStorage.nome_usuario_meuapp;
+    
     console.log("Teste");
     console.log(login_usuario);
     console.log(nome_usuario);
     if (login_usuario == undefined)  {
         redirecionar_login();
     } else {
-        b_usuario.innerHTML = `${nome_usuario}`;
-        b_email.innerHTML = `${login_usuario}`;
+        b_usuario.innerHTML = nome_usuario;
+        b_email.innerHTML = login_usuario;
         validar_sessao();
     }
     

@@ -150,6 +150,7 @@
                     console.log("resposta",json);
                     sessionStorage.login_usuario_meuapp = json.email;
                     sessionStorage.nome_usuario_meuapp = json.nomeUsuario;
+                    sessionStorage.id_usuario_meuapp = json.idUsuario;
                     
                     window.location.href = 'profile.html';
                 });
