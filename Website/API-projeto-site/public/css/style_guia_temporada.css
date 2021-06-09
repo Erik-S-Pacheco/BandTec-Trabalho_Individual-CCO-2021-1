@@ -10,12 +10,23 @@
     margin-bottom: 40px;
 }
 
+.post a {
+    text-decoration: none;
+    color: black;
+}
+
 .post_flex {
     display: flex;
 }
 
 .post_thumbnail {
     width: 345px;
+    height: 175px;
+}
+
+.post_thumbnail img {
+    height: 100%;
+    width: 100%;
 }
 
 .data, .title, .text, .fonte {

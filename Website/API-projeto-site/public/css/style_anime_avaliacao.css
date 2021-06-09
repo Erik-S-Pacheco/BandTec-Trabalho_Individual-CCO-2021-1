@@ -15,8 +15,8 @@ body .page{
 }
 
 .rate_box {
-    width: 600px;
-    background-color: #E0E0E0;
+    width: 500px;
+    background-color: rgba(224, 224, 224, 0.8);
     padding: 40px 0;
     display: flex;
     flex-direction: column;
@@ -24,11 +24,11 @@ body .page{
 }
 
 .rate_box .container {
-    max-width: 470px;
+    max-width: 440px;
     /* min-width: 320px; */
     margin: 0 25px;
     margin: auto;
-    width: 80%;
+    width: 100%;
 }
 
 
@@ -63,6 +63,7 @@ body .page{
 
 .feed span{
     font-size: 20px;
+    font-weight: 600;
     color: #524E50;
     padding-bottom: 10px;
 }
@@ -70,7 +71,7 @@ body .page{
 .post {
     width: 100%;
     height: 400px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.5);
     overflow: auto;
     display: flex;
     flex-direction: column;
@@ -83,7 +84,6 @@ body .page{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: red;
     padding: 10px;
 }
 
@@ -92,6 +92,7 @@ body .page{
 .animes_information {
     width: 100%;
     display: flex;
+    margin-bottom: 40px;
 }
 
 .animes_information .container_img {
@@ -114,7 +115,12 @@ body .page{
 
 .animes_information .container_avaliacao span {
     font-size: 25px;
-    text-align: justify;
+    text-align: justify;;
+    padding-bottom: 10px;
+}
+
+.container_avaliacao input {
+    height: 20px;
 }
 
 .btn-blue {

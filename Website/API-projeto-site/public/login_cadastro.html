@@ -73,8 +73,15 @@
         cadastro.style.display = "none";
         login.style.display = "block";
         btnLogin.style.borderBottomColor = "#4169E1";
-        btnCadastro.style.borderBottomColor = "#E0E0E0";
+        btnCadastro.style.borderBottomColor = "rgba(224, 224, 224, 0.0)";
        
+    }
+
+    function aparecerCadastro(){
+        login.style.display = "none";
+        cadastro.style.display = "block";
+        btnCadastro.style.borderBottomColor = "#4169E1";
+        btnLogin.style.borderBottomColor = "rgba(224, 224, 224, 0.0)";
     }
 
     // function apagarCampoCadastro(){
@@ -84,17 +91,6 @@
     //     getElementById("senhaCadastro").value = "";
     // }
     // }
-
-    function aparecerCadastro(){
-        login.style.display = "none";
-        cadastro.style.display = "block";
-        btnCadastro.style.borderBottomColor = "#4169E1";
-        btnLogin.style.borderBottomColor = "#E0E0E0";
-    }
-
-
-
-
 
     function cadastrar() {
         // var emailValidacao = email.value;

@@ -34,16 +34,29 @@
                 </div>
                 <div class="post">
                     <div class="animes">
+
                         <div class="animes_information">
                             <div class="container_img">
                                 <img src="./img_animes/Boku-no-Hero-Academia-5.jpg" alt="">
                             </div>
-                            <div class="container_avaliacao">
-                                <span>Kimetsudw</span>
-                                <p>De uma nota de 0 a 10:</p>
-                                <input type="number">  
+                            <form class="container_avaliacao" id="form_avaliacao" method="post" onsubmit="return avaliar()">
+                                <span>Boku no Hero Academia 5</span>
+                                <b>Nota (0 a 10):</b> 
+                                <input type="number" name="valorNota" autofocus="autofocus" placeholder="Digite aqui a nota" required minlength="4">
                                 <button class="btn-blue">Enviar</button>  
+                            </form>
+                        </div>
+
+                        <div class="animes_information">
+                            <div class="container_img">
+                                <img src="./img_animes/Shaman_King.jpg" alt="">
                             </div>
+                            <form class="container_avaliacao" id="form_avaliacao" method="post" onsubmit="return avaliar()">
+                                <span>Shaman King 2021</span>
+                                <b>Nota (0 a 10):</b> 
+                                <input type="number" name="valorNota" autofocus="autofocus" placeholder="Digite aqui a nota" required minlength="4">
+                                <button class="btn-blue">Enviar</button>  
+                            </form>
                         </div>
                         
                     </div>
@@ -57,6 +70,6 @@
 
 <script>
 
-//   verificar_autenticacao();
+  verificar_autenticacao();
   
 </script>
